@@ -57,5 +57,9 @@ body {
 }
 
 .botoes {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px; /* Isso define a largura da "caixa" de botões */
+    gap: 4px; /* Opcional: cria um espacinho entre os botões se você preferir */
 }
