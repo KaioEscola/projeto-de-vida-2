@@ -62,4 +62,5 @@ body {
     width: 100%;
     max-width: 450px; /* Isso define a largura da "caixa" de botões */
     gap: 4px; /* Opcional: cria um espacinho entre os botões se você preferir */
+    margin-top: 60px;
 }
