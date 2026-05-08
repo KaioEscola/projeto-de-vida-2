@@ -2,7 +2,7 @@
 
 :root {
     --cor-de-fundo: #0D1B2A;
-    --CinzaLaranja: #c9bcab;
+    --borda: #507ec7;
     --branco: rgb(161, 161, 161);
     --botao-ativo: #4665a0;
     --botao-inativo: #32476e (58, 55, 94, 0.5);
@@ -63,4 +63,8 @@ body {
     max-width: 450px; /* Isso define a largura da "caixa" de botões */
     gap: 4px; /* Opcional: cria um espacinho entre os botões se você preferir */
     margin-top: 120px;
+}
+.ativo{
+    background-color: var(--botao-ativo)
+    border-botton: 4px solid var(var(--borda))
 }
