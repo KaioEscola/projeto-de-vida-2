@@ -3,18 +3,21 @@
 :root {
     --cor-de-fundo: #0D1B2A;
     --borda: #507ec7;
-    --branco: rgb(161, 161, 161);
+    --branco: rgb(220, 220, 220); /* Ajustado para um branco mais visível */
     --botao-ativo: #4665a0;
-    --botao-inativo: #32476e (58, 55, 94, 0.5);
-    --texto-fundo: #415A77 (58, 55, 94, 0.3);
+    /* Removido o conflito de Hex + RGBA */
+    --botao-inativo: rgba(90, 119, 173, 0.5); 
+    --texto-fundo: rgba(65, 90, 119, 0.3);
+    --cor-destaque: #E0E1DD; /* Substituindo a variável faltante CinzaLaranja */
 }
 
 body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 20px;
 }
-
 
 .conteudo-principal {
     display: flex;
@@ -33,7 +36,16 @@ body {
 }
 
 .titulo-principal span {
-    color: var(--CinzaLaranja);
+    color: var(--cor-destaque);
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    margin-top: 120px;
+    /* Removido o gap para os botões "encaixarem" perfeitamente se desejar */
 }
 
 .botao {
@@ -50,21 +62,22 @@ body {
     border-left: 2px solid var(--botao-ativo);
     border-right: 2px solid var(--botao-ativo);
     border-top: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .botao:first-child {
     border-radius: 40px 40px 0 0;
+    border-top: 2px solid var(--botao-ativo); /* Adicionado para fechar o topo */
 }
 
-.botoes {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 450px; /* Isso define a largura da "caixa" de botões */
-    gap: 4px; /* Opcional: cria um espacinho entre os botões se você preferir */
-    margin-top: 120px;
+/* Correção da classe ativo */
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    border-bottom: 4px solid var(--borda);
 }
-.ativo{
-    background-color: var(--botao-ativo)
-    border-botton: 4px solid var(var(--borda))
+
+.botao:hover {
+    background-color: var(--botao-ativo);
+    filter: brightness(1.2);
 }
